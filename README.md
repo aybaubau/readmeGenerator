@@ -26,7 +26,7 @@ npm install
 
 ## Usage
 
-Run `node index.js` and follow the questions as prompted.
+Run `node index.js` and answer the questions as prompted.
 
 ## License
 
@@ -34,7 +34,7 @@ This project is licensed under the MIT license.
 
 ## Contributing
 
-Please contact me! See my email in the Questions section.
+Please see my contact info in the questions section if you are interested in contributing.
 
 ## Tests
 
@@ -46,5 +46,5 @@ npm test
 
 ## Questions
 
-![Github_avatar]("https://avatars1.githubusercontent.com/u/36999425?v=4") You can contact me at alliebauer2@gmail.com.
+![Github_avatar](https://avatars1.githubusercontent.com/u/36999425?v=4) You can contact me at alliebauer2@gmail.com.
 

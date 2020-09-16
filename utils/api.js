@@ -6,7 +6,7 @@ const api = {
       axios
         .get(`https://api.github.com/users/${username}`)
         .then(function(response){
-          const avatar = JSON.stringify(response.data.avatar_url);
+          const avatar = response.data.avatar_url;
           resolve(avatar);
         })
 
