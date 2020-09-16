@@ -10,6 +10,11 @@ const questions = [{
 },
 {
     type: 'input',
+    name: 'email',
+    message: 'What is your email address?'
+},
+{
+    type: 'input',
     name: 'title',
     message: 'What is the title of your project?'
 },
@@ -27,6 +32,12 @@ const questions = [{
     type: 'input',
     name: 'usage',
     message: 'How do you use it?'
+},
+{
+    type: 'list',
+    name: 'license',
+    message: 'Which license would you like to use?',
+    choices: ['MIT', 'GNU GPLv3', 'ISC', 'Apache License 2.0']
 },
 {
     type: 'input',
@@ -50,49 +61,17 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer
         .prompt(questions)
-        // .then(async({ username }) => {
-        //     try {
-        //         const gitUser = api.getUser(username);
-        //         console.log(gitUser);
-        //     } catch (e) {
-        //         console.log(e);
-        //     }
-        // })
-        .then(function(response) {
+        .then(async function(response) {
             console.log(response);
             try {
-                const readmeData = generateMarkdown(response);
+                const gitUser = await api.getUser(response.username);
+                console.log(gitUser);
+                const readmeData = generateMarkdown(response, gitUser);
                 writeToFile('./README.md', readmeData);
             } catch (e) {
                 console.log(e);
             }
         })
-};
+    };
 
 init();
-
-
-
-
-
-// The generated README includes a bio image from the user's GitHub profile.
-
-
-// The generated README includes the user's email.
-
-
-// The generated README includes the following sections:
-
-// Title
-// Description
-// Table of Contents
-// Installation
-// Usage
-// License
-// Contributing
-// Tests
-// Questions
-
-
-
-// The generated README includes 1 badge that's specific to the repository.

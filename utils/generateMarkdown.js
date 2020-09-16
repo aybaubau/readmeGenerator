@@ -1,4 +1,4 @@
-function generateMarkdown(data) {
+function generateMarkdown(data, image) {
   return `
 # ${data.title}
 ![](https://img.shields.io/badge/license-${data.license}-brightgreen)
@@ -21,7 +21,9 @@ ${data.description}
 
 To install necessary dependencies, run the following command:
 
-  ${data.installation}
+~~~
+${data.installation}
+~~~
 
 ## Usage
 
@@ -39,11 +41,13 @@ ${data.contributing}
 
 To run tests, run the following command:
 
-  ${data.tests}
+~~~
+${data.tests}
+~~~
 
 ## Questions
 
-${data.questions}
+![Github_avatar](${image}) You can contact me at ${data.email}.
 
 `;
 }
